@@ -1,10 +1,14 @@
- ---
-  - hosts: web-servers
-    become: true
-    tasks:
-     - name: stop previous version docker
-       shell: docker stop rosven_demo
-     - name: remove stopped container
-       shell: docker rm -f rosven_demo	  
-     - name: create docker image
-       shell: docker run -d --name rosven_demo -p 8090:8080 giribabu/rosven:1.0
+---
+
+- name: Running docker container
+  hosts: all
+  vars:
+       vid: "{{ version }}"
+  become: true
+  tasks:
+    - name: stop previous doc container
+      shell: sudo docker stop rosven_demo
+    - name: remove stopped container
+      shell: sudo docker rm -f rosven_demo
+    - name: create docker image
+      shell: sudo docker run -d --name rosven_demo -p 8090:8080 giribabu/rosven:"{{ vid }}"
