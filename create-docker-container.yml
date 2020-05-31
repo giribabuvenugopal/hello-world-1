@@ -1,7 +1,7 @@
 ---
 
 - name: Running docker container
-  hosts: all
+  hosts: web-servers
   vars:
        vid: "{{ version }}"
   become: true
