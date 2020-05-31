@@ -2,6 +2,7 @@
 From tomcat:8-jre8 
 
 # Maintainer 
-MAINTAINER "gmailh@gmail.com" 
+MAINTAINER "giribabu@gmail.com" 
 COPY ./webapp.war /usr/local/tomcat/webapps
-EXE ansible-playbook create-docker-container.yml
+#EXE ansible-playbook create-docker-container.yml
+
